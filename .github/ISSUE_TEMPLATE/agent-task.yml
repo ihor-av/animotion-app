@@ -1,0 +1,43 @@
+name: Agent task
+description: A scoped task for the builder loop. Add the agent:build label when the acceptance criteria are ready.
+title: "[task] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Keep this scoped and give it testable acceptance criteria. The chatbot
+        can start the Cloudflare coder on this issue. The agent opens a PR; a
+        human still merges.
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: One or two sentences. What should change?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Checkable statements. The reviewers will judge against these.
+      placeholder: |
+        - [ ] `/gallery` still builds
+        - [ ] The chart shows units, source, and as-of date
+        - [ ] No new dependencies
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context and constraints
+      description: Files, D1 views, design notes, edge cases.
+    validations:
+      required: false
+  - type: textarea
+    id: out_of_scope
+    attributes:
+      label: Out of scope
+      description: What the agent must not touch or change.
+    validations:
+      required: false
