@@ -5,8 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Hello world</title>
-	<meta name="description" content="Hello world — an Animotion presentation." />
+	<title>Chernivtsi Finance Data</title>
 </svelte:head>
 
 {@render children()}
