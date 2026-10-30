@@ -21,6 +21,9 @@
 			<p class="mt-6 text-2xl leading-relaxed opacity-80">
 				This deck uses Chernivtsi open data served from Cloudflare D1.
 			</p>
+			<p class="mt-4 text-sm uppercase tracking-[0.2em] opacity-50">
+				Built with SvelteKit and Animotion
+			</p>
 		</div>
 	</Slide>
 </Presentation>
