@@ -1,5 +1,5 @@
 name: Agent task
-description: A scoped task for the builder loop. Add the agent:build label when the acceptance criteria are ready.
+description: A scoped task for the Cloudflare builder loop.
 title: "[task] "
 labels: []
 body:
@@ -7,8 +7,8 @@ body:
     attributes:
       value: |
         Keep this scoped and give it testable acceptance criteria. The chatbot
-        can start the Cloudflare coder on this issue. The agent opens a PR; a
-        human still merges.
+        can start the Cloudflare coder on this issue. The agent opens a PR;
+        passing CI and review auto-merges it.
   - type: textarea
     id: goal
     attributes:

@@ -79,7 +79,8 @@ scripts/                         deterministic loop helpers
   issue number to the Cloudflare `app-builder` Worker.
 - The builder creates `agent/issue-<n>`, opens a PR, and never touches `main`.
 - Every PR gets two independent adversarial reviews from the Cloudflare
-  reviewer. A human merges.
+  reviewer. A PASS with green CI is squash-merged automatically. A FAIL leaves
+  the PR open for a fix round.
 - One issue per branch and PR. Keep diffs small; split unrelated work.
 - Do not edit `.github/**`, `.opencode/**`, `scripts/**`, `AGENTS.md`,
   `wrangler.jsonc`, `.env*`, `build/**`, or `.svelte-kit/**` from a task.
