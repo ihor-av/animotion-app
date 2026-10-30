@@ -76,7 +76,9 @@ Slide copy is Ukrainian. Code, docs, commits, and agent output stay English.
 ## Current deck status
 
 The current `src/routes/+page.svelte` uses the Hackathon 2026 design language
-(see [`design-system.md`](./design-system.md)) but is still a scaffold: a title
-slide and a non-scored "About the data" context slide. The eight scored
-sections above are not populated yet. It must be reordered and extended into
-the sequence above. Do not treat the scaffold as the final narrative.
+and follows the required order: title, the eight scored sections, and a closing
+slide. Criterion 2 is grounded in the loaded D1 finance/asset views; repair,
+transport, and POI data are explicitly roadmap items. The route and micro-app
+mockup is labeled as a concept, because the live prototype is the chat plus the
+read-only D1 tools. Keep the sections in order and replace concept estimates
+with pilot evidence as it arrives.
