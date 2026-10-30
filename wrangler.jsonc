@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "animotion-app",
+  "compatibility_date": "2026-10-30",
+
+  // SvelteKit's adapter-static writes the site to ./build.
+  // This is an assets-only Worker: no server-side code at runtime.
+  "assets": {
+    "directory": "./build"
+  }
+}

@@ -1,0 +1,59 @@
+@layer reset, presentation, overrides;
+
+/* fonts */
+@import '@fontsource-variable/inter';
+
+/* presentation */
+@import '@animotion/core/theme' layer(presentation);
+
+/* tailwind */
+@import 'tailwindcss/theme';
+@import 'tailwindcss/utilities';
+
+@theme {
+	--font-sans: 'Inter Variable', 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer reset {
+	*,
+	*::before,
+	*::after {
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+}
+
+@layer presentation {
+	:root {
+		color-scheme: light dark;
+
+		--r-background-color: light-dark(#ffffff, #0a0a0a);
+		--r-main-color: light-dark(#111111, #f5f5f5);
+		--r-main-font: 'Inter Variable', 'Inter', ui-sans-serif, system-ui, sans-serif;
+		--r-main-font-size: 42px;
+		--r-heading-font: var(--r-main-font);
+		--r-code-font: ui-monospace, 'SFMono-Regular', monospace;
+		--r-link-color: light-dark(#2563eb, #60a5fa);
+
+		/* chart neutrals */
+		--chart-text: light-dark(#111111, #f5f5f5);
+		--chart-muted: light-dark(#6b7280, #a1a1aa);
+		--chart-border: light-dark(#e5e7eb, #27272a);
+		--chart-grid: light-dark(#e5e7eb, #27272a);
+		--chart-axis: light-dark(#9ca3af, #52525b);
+		--chart-surface: light-dark(#ffffff, #18181b);
+		--chart-positive: light-dark(#15803d, #4ade80);
+		--chart-negative: light-dark(#b91c1c, #f87171);
+
+		/* chart series (white text safe in both schemes) */
+		--chart-1: #2563eb;
+		--chart-2: #0d9488;
+		--chart-3: #b45309;
+		--chart-4: #dc2626;
+		--chart-5: #7c3aed;
+		--chart-6: #0891b2;
+		--chart-7: #4d7c0f;
+		--chart-8: #be185d;
+	}
+}
