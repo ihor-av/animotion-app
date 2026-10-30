@@ -26,11 +26,13 @@ Live URL: https://animotion-app.hackaton-scope-creep.workers.dev
 npm run dev                   # local dev server
 npm run check                 # svelte-check; must pass
 npm run build                 # static build to ./build; must pass
+npm run check:meta            # exactly one meta description per built page
 npm run preview               # preview the production build
 npx wrangler deploy --dry-run # validate the Worker config
 ```
 
-`npm run check` and `npm run build` must pass before any handoff.
+`npm run check`, `npm run build`, and `npm run check:meta` must pass before any
+handoff.
 
 ## Map
 
@@ -79,8 +81,8 @@ scripts/                         deterministic loop helpers
   issue number to the Cloudflare `app-builder` Worker.
 - The builder creates `agent/issue-<n>`, opens a PR, and never touches `main`.
 - Every PR gets two independent adversarial reviews from the Cloudflare
-  reviewer. A PASS with green CI is squash-merged automatically. A FAIL leaves
-  the PR open for a fix round.
+  reviewer. A PASS with green CI is squash-merged automatically. A FAIL starts
+  a fix round and a fresh review; a second FAIL leaves the PR open.
 - One issue per branch and PR. Keep diffs small; split unrelated work.
 - Do not edit `.github/**`, `.opencode/**`, `scripts/**`, `AGENTS.md`,
   `wrangler.jsonc`, `.env*`, `build/**`, or `.svelte-kit/**` from a task.
@@ -93,7 +95,7 @@ scripts/                         deterministic loop helpers
 ## Definition of done
 
 - Acceptance criteria in the issue are met.
-- `npm run check` and `npm run build` pass.
+- `npm run check`, `npm run build`, and `npm run check:meta` pass.
 - No secrets, tokens, personal data, or generated directories in the diff.
 - The deck still works at `/` and the chart gallery at `/gallery`.
 - The PR explains what changed, why, and any remaining risk.
