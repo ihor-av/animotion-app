@@ -103,6 +103,8 @@ scripts/                         deterministic loop helpers
 ## Review contract
 
 - Reviewers are read-only. They do not edit, commit, or push.
+- Each review runs two independent reviewer processes; both must say `PASS`.
+- A re-review of the same FAILed commit is refused. Push a fix commit first.
 - A finding needs a severity, `file:line`, evidence, and a suggested fix.
 - Reviewers judge against this file and the issue's acceptance criteria, not
   personal style preferences.
