@@ -75,10 +75,12 @@ Slide copy is Ukrainian. Code, docs, commits, and agent output stay English.
 
 ## Current deck status
 
-The current `src/routes/+page.svelte` uses the Hackathon 2026 design language
-and follows the required order: title, the eight scored sections, and a closing
-slide. Criterion 2 is grounded in the loaded D1 finance/asset views; repair,
-transport, and POI data are explicitly roadmap items. The route and micro-app
-mockup is labeled as a concept, because the live prototype is the chat plus the
-read-only D1 tools. Keep the sections in order and replace concept estimates
-with pilot evidence as it arrives.
+The current `src/routes/+page.svelte` presents **Chernivtsi MCP**, a standard
+MCP server for Chernivtsi open data and services, in the required order: title,
+the eight scored sections, and a closing 30-day MCP plan. Criterion 2 is
+grounded in the loaded D1 finance/asset views; the D1 data layer and read-only
+bot are live, while the MCP tool surface is the next build. Repair, transport,
+and POI tools are explicit roadmap items. There is no custom UI: the product is
+the MCP server, consumed by standard MCP clients. Market, cost, and
+business-model figures are labeled estimates or assumptions; replace them with
+pilot evidence as it arrives.
