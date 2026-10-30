@@ -25,7 +25,7 @@
 		yLabel,
 		formatX,
 		formatY,
-		color = 'var(--chart-1, #2563eb)',
+		color = 'var(--chart-1, #0033a1)',
 		size = 5,
 		trendline = false,
 		zero = false,
@@ -126,7 +126,7 @@
 			x2={geometry.width - geometry.margin.right}
 			y1={geometry.y(tick)}
 			y2={geometry.y(tick)}
-			stroke="var(--chart-grid, #e5e7eb)"
+			stroke="var(--chart-grid, #e6e4df)"
 			stroke-width="1"
 		/>
 		<text
@@ -134,7 +134,7 @@
 			y={geometry.y(tick) + 7}
 			text-anchor="end"
 			font-size="22"
-			fill="var(--chart-muted, #6b7280)">{yFormatter(tick)}</text
+			fill="var(--chart-muted, #4a4a4a)">{yFormatter(tick)}</text
 		>
 	{/each}
 
@@ -144,7 +144,7 @@
 			y={height - (xLabel ? 36 : 20)}
 			text-anchor="middle"
 			font-size="22"
-			fill="var(--chart-muted, #6b7280)">{xFormatter(tick)}</text
+			fill="var(--chart-muted, #4a4a4a)">{xFormatter(tick)}</text
 		>
 	{/each}
 
@@ -155,7 +155,7 @@
 				y1={geometry.trend.y1}
 				x2={geometry.trend.x2}
 				y2={geometry.trend.y2}
-				stroke="var(--chart-muted, #6b7280)"
+				stroke="var(--chart-muted, #4a4a4a)"
 				stroke-width="1.5"
 				stroke-dasharray="4 4"
 			/>
@@ -180,7 +180,7 @@
 			y={height - 6}
 			text-anchor="middle"
 			font-size="20"
-			fill="var(--chart-muted, #6b7280)">{xLabel}</text
+			fill="var(--chart-muted, #4a4a4a)">{xLabel}</text
 		>
 	{/if}
 
@@ -190,7 +190,7 @@
 			y={geometry.margin.top + geometry.plotHeight / 2}
 			text-anchor="middle"
 			font-size="20"
-			fill="var(--chart-muted, #6b7280)"
+			fill="var(--chart-muted, #4a4a4a)"
 			transform="rotate(-90 20 {geometry.margin.top + geometry.plotHeight / 2})">{yLabel}</text
 		>
 	{/if}

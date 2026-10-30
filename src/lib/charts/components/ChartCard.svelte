@@ -47,11 +47,12 @@
 		flex-direction: column;
 		gap: 1rem;
 		min-width: 0;
-		padding: 1.15rem 1.25rem;
-		border: 1px solid var(--chart-border, #e5e7eb);
-		border-radius: 1rem;
+		padding: 1.1rem 1.2rem;
+		border: 1px solid var(--chart-border, #d9d9d9);
+		border-top: 3px solid var(--template-red, #ee252f);
+		border-radius: 0;
 		background: var(--chart-surface, #ffffff);
-		color: var(--chart-text, #111111);
+		color: var(--chart-text, #000000);
 		text-align: left;
 	}
 
@@ -71,16 +72,17 @@
 
 	h3 {
 		margin: 0;
-		font-size: 1.35rem;
-		font-weight: 600;
-		letter-spacing: -0.01em;
-		line-height: 1.3;
+		font-size: 1.05rem;
+		font-weight: 700;
+		letter-spacing: 0.04em;
+		line-height: 1.25;
+		text-transform: uppercase;
 	}
 
 	.subtitle {
 		margin: 0;
-		color: var(--chart-muted, #6b7280);
-		font-size: 1.05rem;
+		color: var(--chart-muted, #4a4a4a);
+		font-size: 0.94rem;
 		line-height: 1.4;
 	}
 
@@ -93,8 +95,13 @@
 	}
 
 	footer {
-		color: var(--chart-muted, #6b7280);
-		font-size: 1.05rem;
+		padding-top: 0.65rem;
+		border-top: 1px solid var(--chart-border, #d9d9d9);
+		color: var(--chart-muted, #4a4a4a);
+		font-size: 0.7rem;
+		font-weight: 500;
+		letter-spacing: 0.1em;
 		line-height: 1.4;
+		text-transform: uppercase;
 	}
 </style>

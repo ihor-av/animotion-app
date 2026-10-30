@@ -23,9 +23,9 @@
 		format,
 		tickFormat,
 		showValues = true,
-		positiveColor = 'var(--chart-positive, #15803d)',
-		negativeColor = 'var(--chart-negative, #b91c1c)',
-		totalColor = 'var(--chart-1, #2563eb)',
+		positiveColor = 'var(--chart-positive, #0033a1)',
+		negativeColor = 'var(--chart-negative, #ee252f)',
+		totalColor = 'var(--chart-1, #0033a1)',
 		class: className = '',
 		ariaLabel = 'Waterfall chart'
 	}: Props = $props();
@@ -84,7 +84,7 @@
 			x2={geometry.width - geometry.margin.right}
 			y1={geometry.y(tick)}
 			y2={geometry.y(tick)}
-			stroke="var(--chart-grid, #e5e7eb)"
+			stroke="var(--chart-grid, #e6e4df)"
 			stroke-width="1"
 		/>
 		<text
@@ -92,7 +92,7 @@
 			y={geometry.y(tick) + 7}
 			text-anchor="end"
 			font-size="22"
-			fill="var(--chart-muted, #6b7280)">{tickFormatter(tick)}</text
+			fill="var(--chart-muted, #4a4a4a)">{tickFormatter(tick)}</text
 		>
 	{/each}
 
@@ -110,7 +110,7 @@
 				x2={x}
 				y1={geometry.y(previous.end)}
 				y2={geometry.y(previous.end)}
-				stroke="var(--chart-axis, #9ca3af)"
+				stroke="var(--chart-axis, #8a8a8a)"
 				stroke-width="1"
 				stroke-dasharray="3 3"
 			/>
@@ -121,7 +121,7 @@
 			y={topY}
 			width={barWidth}
 			height={Math.max(1, bottomY - topY)}
-			rx="2"
+			rx="0"
 			fill={color(step)}
 		>
 			<title>{step.label}: {label(step)}</title>
@@ -133,7 +133,7 @@
 				y={positive ? topY - 10 : bottomY + 20}
 				text-anchor="middle"
 				font-size="20"
-				fill="var(--chart-muted, #6b7280)">{label(step)}</text
+				fill="var(--chart-muted, #4a4a4a)">{label(step)}</text
 			>
 		{/if}
 
@@ -145,7 +145,7 @@
 			text-anchor={geometry.rotateLabels ? 'end' : 'middle'}
 			transform={geometry.rotateLabels ? `rotate(-32 ${labelX} ${labelY})` : undefined}
 			font-size="22"
-			fill="var(--chart-muted, #6b7280)">{truncateLabel(step.label, 10)}</text
+			fill="var(--chart-muted, #4a4a4a)">{truncateLabel(step.label, 10)}</text
 		>
 	{/each}
 </svg>

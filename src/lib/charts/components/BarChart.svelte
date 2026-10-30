@@ -25,7 +25,7 @@
 		labelWidth = '10rem',
 		format,
 		tickFormat,
-		color = 'var(--chart-1, #2563eb)',
+		color = 'var(--chart-1, #0033a1)',
 		showValues = true,
 		max,
 		class: className = '',
@@ -116,7 +116,7 @@
 				x2={vertical.width - vertical.margin.right}
 				y1={vertical.y(tick)}
 				y2={vertical.y(tick)}
-				stroke="var(--chart-grid, #e5e7eb)"
+				stroke="var(--chart-grid, #e6e4df)"
 				stroke-width="1"
 			/>
 			<text
@@ -124,7 +124,7 @@
 				y={vertical.y(tick) + 7}
 				text-anchor="end"
 				font-size="22"
-				fill="var(--chart-muted, #6b7280)">{tickFormatter(tick)}</text
+				fill="var(--chart-muted, #4a4a4a)">{tickFormatter(tick)}</text
 			>
 		{/each}
 
@@ -133,7 +133,7 @@
 			x2={vertical.width - vertical.margin.right}
 			y1={vertical.y(0)}
 			y2={vertical.y(0)}
-			stroke="var(--chart-axis, #9ca3af)"
+			stroke="var(--chart-axis, #8a8a8a)"
 			stroke-width="1"
 		/>
 
@@ -147,7 +147,7 @@
 				y={Math.min(valueY, zeroY)}
 				width={barWidth}
 				height={Math.abs(valueY - zeroY)}
-				rx="3"
+				rx="0"
 				fill={datum.color ?? color}
 			>
 				<title>{datum.label}: {valueFormatter(datum.value)}</title>
@@ -158,7 +158,7 @@
 					y={datum.value >= 0 ? valueY - 10 : valueY + 20}
 					text-anchor="middle"
 					font-size="20"
-					fill="var(--chart-muted, #6b7280)">{valueFormatter(datum.value)}</text
+					fill="var(--chart-muted, #4a4a4a)">{valueFormatter(datum.value)}</text
 				>
 			{/if}
 			{#if vertical.labelIndices.has(index)}
@@ -167,7 +167,7 @@
 					y={height - 18}
 					text-anchor="middle"
 					font-size="22"
-					fill="var(--chart-muted, #6b7280)">{truncateLabel(datum.label, 10)}</text
+					fill="var(--chart-muted, #4a4a4a)">{truncateLabel(datum.label, 10)}</text
 				>
 			{/if}
 		{/each}
@@ -193,7 +193,7 @@
 	.label {
 		display: -webkit-box;
 		overflow: hidden;
-		color: var(--chart-muted, #6b7280);
+		color: var(--chart-muted, #4a4a4a);
 		font-size: 1rem;
 		line-height: 1.3;
 		-webkit-box-orient: vertical;
@@ -203,20 +203,20 @@
 
 	.track {
 		position: relative;
-		height: 0.7rem;
-		border-radius: 999px;
-		background: var(--chart-grid, #e5e7eb);
+		height: 0.65rem;
+		border-radius: 0;
+		background: var(--chart-grid, #e6e4df);
 	}
 
 	.bar {
 		position: absolute;
 		top: 0;
 		bottom: 0;
-		border-radius: 999px;
+		border-radius: 0;
 	}
 
 	.value {
-		color: var(--chart-text, #111111);
+		color: var(--chart-text, #000000);
 		font-size: 1rem;
 		font-variant-numeric: tabular-nums;
 		white-space: nowrap;

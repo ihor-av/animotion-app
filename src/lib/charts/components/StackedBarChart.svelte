@@ -99,7 +99,7 @@
 				x2={geometry.width - geometry.margin.right}
 				y1={geometry.y(tick)}
 				y2={geometry.y(tick)}
-				stroke="var(--chart-grid, #e5e7eb)"
+				stroke="var(--chart-grid, #e6e4df)"
 				stroke-width="1"
 			/>
 			<text
@@ -107,7 +107,7 @@
 				y={geometry.y(tick) + 7}
 				text-anchor="end"
 				font-size="22"
-				fill="var(--chart-muted, #6b7280)">{tickFormatter(tick)}</text
+				fill="var(--chart-muted, #4a4a4a)">{tickFormatter(tick)}</text
 			>
 		{/each}
 
@@ -149,7 +149,7 @@
 					y={geometry.y(percent ? 100 : column.total) - 9}
 					text-anchor="middle"
 					font-size="20"
-					fill="var(--chart-muted, #6b7280)">{valueFormatter(column.total)}</text
+					fill="var(--chart-muted, #4a4a4a)">{valueFormatter(column.total)}</text
 				>
 			{/if}
 			<text
@@ -157,7 +157,7 @@
 				y={height - 18}
 				text-anchor="middle"
 				font-size="22"
-				fill="var(--chart-muted, #6b7280)">{truncateLabel(column.category, 10)}</text>
+				fill="var(--chart-muted, #4a4a4a)">{truncateLabel(column.category, 10)}</text>
 			>
 		{/each}
 	</svg>

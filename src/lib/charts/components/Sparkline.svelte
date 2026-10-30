@@ -15,7 +15,7 @@
 		data,
 		width = 160,
 		height = 40,
-		color = 'var(--chart-1, #2563eb)',
+		color = 'var(--chart-1, #0033a1)',
 		area = true,
 		strokeWidth = 1.5,
 		class: className = ''

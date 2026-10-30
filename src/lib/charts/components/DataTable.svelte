@@ -66,7 +66,7 @@
 	.table-wrap {
 		min-width: 0;
 		overflow-x: auto;
-		color: var(--chart-text, #111111);
+		color: var(--chart-text, #000000);
 		text-align: left;
 	}
 
@@ -79,15 +79,15 @@
 
 	caption {
 		padding-bottom: 0.5rem;
-		color: var(--chart-muted, #6b7280);
+		color: var(--chart-muted, #4a4a4a);
 		font-size: 1.05rem;
 		text-align: left;
 	}
 
 	.table-wrap th {
 		padding: 0.45rem 0.55rem;
-		border-bottom: 1px solid var(--chart-border, #e5e7eb);
-		color: var(--chart-muted, #6b7280);
+		border-bottom: 1px solid var(--chart-border, #d9d9d9);
+		color: var(--chart-muted, #4a4a4a);
 		font-size: 1rem;
 		font-weight: 500;
 		letter-spacing: 0.05em;
@@ -97,7 +97,7 @@
 
 	.table-wrap td {
 		padding: 0.55rem;
-		border-bottom: 1px solid var(--chart-border, #e5e7eb);
+		border-bottom: 1px solid var(--chart-border, #d9d9d9);
 		vertical-align: top;
 	}
 
@@ -125,7 +125,7 @@
 
 	.more {
 		margin: 0.55rem 0 0;
-		color: var(--chart-muted, #6b7280);
+		color: var(--chart-muted, #4a4a4a);
 		font-size: 1rem;
 	}
 </style>

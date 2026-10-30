@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Chernivtsi Finance Data</title>
+	<title>Фінанси Чернівців у відкритих даних</title>
 </svelte:head>
 
 {@render children()}
