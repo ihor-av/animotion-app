@@ -23,7 +23,7 @@
 		deltaLabel,
 		hint,
 		trend,
-		trendColor = 'var(--chart-1, #2563eb)',
+		trendColor = 'var(--chart-1, #0033a1)',
 		variant = 'card',
 		class: className = ''
 	}: Props = $props();
@@ -69,10 +69,11 @@
 		gap: 0.35rem;
 		min-width: 0;
 		padding: 1rem 1.1rem;
-		border: 1px solid var(--chart-border, #e5e7eb);
-		border-radius: 1rem;
+		border: 1px solid var(--chart-border, #d9d9d9);
+		border-top: 3px solid var(--template-blue, #0033a1);
+		border-radius: 0;
 		background: var(--chart-surface, #ffffff);
-		color: var(--chart-text, #111111);
+		color: var(--chart-text, #000000);
 		text-align: left;
 	}
 
@@ -84,10 +85,10 @@
 
 	.label {
 		margin: 0;
-		color: var(--chart-muted, #6b7280);
-		font-size: 1rem;
-		font-weight: 500;
-		letter-spacing: 0.05em;
+		color: var(--chart-muted, #4a4a4a);
+		font-size: 0.68rem;
+		font-weight: 700;
+		letter-spacing: 0.14em;
 		line-height: 1.3;
 		text-transform: uppercase;
 	}
@@ -102,9 +103,9 @@
 
 	.value {
 		overflow: hidden;
-		font-size: 1.8rem;
-		font-weight: 600;
-		letter-spacing: -0.035em;
+		font-size: 2rem;
+		font-weight: 700;
+		letter-spacing: -0.04em;
 		line-height: 1.1;
 		text-overflow: ellipsis;
 		white-space: nowrap;
@@ -121,11 +122,11 @@
 	}
 
 	.delta[data-tone='positive'] {
-		color: var(--chart-positive, #15803d);
+		color: var(--chart-positive, #0033a1);
 	}
 
 	.delta[data-tone='negative'] {
-		color: var(--chart-negative, #b91c1c);
+		color: var(--chart-negative, #ee252f);
 	}
 
 	.delta[data-tone='neutral'] {
@@ -137,8 +138,8 @@
 		flex-wrap: wrap;
 		gap: 0.2rem 0.45rem;
 		margin: 0;
-		color: var(--chart-muted, #6b7280);
-		font-size: 1rem;
+		color: var(--chart-muted, #4a4a4a);
+		font-size: 0.82rem;
 		line-height: 1.4;
 	}
 

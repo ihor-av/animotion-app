@@ -20,7 +20,7 @@
 		max = 100,
 		target,
 		format,
-		color = 'var(--chart-1, #2563eb)',
+		color = 'var(--chart-1, #0033a1)',
 		showValue = true,
 		hint,
 		class: className = ''
@@ -100,9 +100,9 @@
 
 	.track {
 		position: relative;
-		height: 0.8rem;
-		border-radius: 999px;
-		background: var(--chart-grid, #e5e7eb);
+		height: 0.65rem;
+		border-radius: 0;
+		background: var(--chart-grid, #e6e4df);
 		overflow: visible;
 	}
 
@@ -117,8 +117,8 @@
 		top: -3px;
 		width: 2px;
 		height: calc(100% + 6px);
-		border-radius: 999px;
-		background: var(--chart-text, #111111);
+		border-radius: 0;
+		background: var(--chart-text, #000000);
 		opacity: 0.45;
 		transform: translateX(-1px);
 	}

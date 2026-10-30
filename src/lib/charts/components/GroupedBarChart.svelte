@@ -80,7 +80,7 @@
 				x2={geometry.width - geometry.margin.right}
 				y1={geometry.y(tick)}
 				y2={geometry.y(tick)}
-				stroke="var(--chart-grid, #e5e7eb)"
+				stroke="var(--chart-grid, #e6e4df)"
 				stroke-width="1"
 			/>
 			<text
@@ -88,7 +88,7 @@
 				y={geometry.y(tick) + 7}
 				text-anchor="end"
 				font-size="22"
-				fill="var(--chart-muted, #6b7280)">{tickFormatter(tick)}</text
+				fill="var(--chart-muted, #4a4a4a)">{tickFormatter(tick)}</text
 			>
 		{/each}
 
@@ -97,7 +97,7 @@
 			x2={geometry.width - geometry.margin.right}
 			y1={geometry.y(0)}
 			y2={geometry.y(0)}
-			stroke="var(--chart-axis, #9ca3af)"
+			stroke="var(--chart-axis, #8a8a8a)"
 			stroke-width="1"
 		/>
 
@@ -113,7 +113,7 @@
 					y={Math.min(valueY, zeroY)}
 					width={geometry.barWidth}
 					height={Math.abs(valueY - zeroY)}
-					rx="2"
+					rx="0"
 					fill={seriesColor(item, seriesIndex)}
 				>
 					<title>{category} · {item.label}: {valueFormatter(value)}</title>
@@ -124,7 +124,7 @@
 						y={value >= 0 ? valueY - 9 : valueY + 18}
 						text-anchor="middle"
 						font-size="20"
-						fill="var(--chart-muted, #6b7280)">{valueFormatter(value)}</text
+						fill="var(--chart-muted, #4a4a4a)">{valueFormatter(value)}</text
 					>
 				{/if}
 			{/each}
@@ -136,7 +136,7 @@
 				text-anchor={geometry.rotateLabels ? 'end' : 'middle'}
 				transform={geometry.rotateLabels ? `rotate(-32 ${labelX} ${labelY})` : undefined}
 				font-size="22"
-				fill="var(--chart-muted, #6b7280)">{truncateLabel(category, 10)}</text
+				fill="var(--chart-muted, #4a4a4a)">{truncateLabel(category, 10)}</text
 			>
 		{/each}
 	</svg>

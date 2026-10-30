@@ -47,22 +47,36 @@
 	<meta name="description" content="A small, composable Svelte chart kit for the Chernivtsi finance dataset." />
 </svelte:head>
 
-<main
-	class="min-h-screen px-5 py-10 md:px-10 md:py-14"
-	style="background: var(--r-background-color); color: var(--r-main-color)"
->
-	<header class="mx-auto max-w-6xl">
-		<p class="text-[0.7rem] font-medium uppercase tracking-[0.22em] opacity-50">
-			chernivtsi-finance-v2 · component gallery
-		</p>
-		<h1 class="mt-2 text-4xl font-semibold tracking-[-0.04em] md:text-5xl">Finance dataviz kit</h1>
-		<p class="mt-3 max-w-2xl text-sm leading-6 opacity-60">
-			Small SVG and HTML components with one visual language. Everything accepts plain arrays and
-			formatting functions, so data can come from D1, a CSV, or a hardcoded fixture.
-		</p>
+<main class="gallery-page min-h-screen">
+	<header class="masthead">
+		<img src="/template/hackathon-band.png" alt="Chernivtsi Open Data Hackathon 3.0" />
+		<div class="masthead-bar">
+			<span>chernivtsi-finance-v2</span>
+			<span>Component gallery</span>
+			<span>Read-only D1</span>
+		</div>
 	</header>
 
-	<section class="mx-auto mt-8 grid max-w-6xl gap-3 sm:grid-cols-2">
+	<div class="gallery-shell">
+		<header class="gallery-head">
+			<p class="gallery-eyebrow"><span></span>Design system · Hackathon 2026</p>
+			<h1>Finance dataviz kit</h1>
+			<p class="gallery-lede">
+				Small SVG and HTML components with one visual language, drawn from the Hackathon 2026
+				template. Everything accepts plain arrays and formatting functions, so data can come
+				from D1, a CSV, or a hardcoded fixture.
+			</p>
+			<div class="swatches" aria-label="Template palette">
+				<span style="--swatch: #000000">Black</span>
+				<span style="--swatch: #ffffff">White</span>
+				<span style="--swatch: #ee252f">Red</span>
+				<span style="--swatch: #0033a1">Blue</span>
+				<span style="--swatch: #d66b47">Coral</span>
+				<span style="--swatch: #4a4a4a">Gray</span>
+			</div>
+		</header>
+
+	<section class="mt-8 grid gap-4 sm:grid-cols-2">
 		<KpiCard
 			label="Land lease / year"
 			value={assets.landAnnualRent}
@@ -90,7 +104,7 @@
 		/>
 	</section>
 
-	<section class="mx-auto mt-3 grid max-w-6xl gap-3 lg:grid-cols-2">
+	<section class="mt-4 grid gap-4 lg:grid-cols-2">
 		<ChartCard
 			title="Road repair spend"
 			subtitle="Top contractors by amount spent"
@@ -135,8 +149,8 @@
 			<GroupedBarChart
 				categories={enterpriseCategories}
 				series={[
-					{ label: 'Plan', values: enterprisePlan, color: 'var(--chart-1, #2563eb)' },
-					{ label: 'Fact', values: enterpriseFact, color: 'var(--chart-2, #0d9488)' }
+					{ label: 'Plan', values: enterprisePlan, color: 'var(--chart-1, #0033a1)' },
+					{ label: 'Fact', values: enterpriseFact, color: 'var(--chart-2, #ee252f)' }
 				]}
 				format={thousands}
 				height={270}
@@ -205,7 +219,7 @@
 						value={manager.months}
 						max={12}
 						format={months}
-						color={manager.months > 6 ? 'var(--chart-4, #dc2626)' : 'var(--chart-1, #2563eb)'}
+						color={manager.months > 6 ? 'var(--chart-2, #ee252f)' : 'var(--chart-1, #0033a1)'}
 						hint={`Debt ${formatCurrency(manager.liability, { compact: true })}`}
 					/>
 				{/each}
@@ -221,8 +235,128 @@
 		</ChartCard>
 	</section>
 
-	<footer class="mx-auto mt-10 max-w-6xl text-xs leading-5 opacity-50">
-		Sample values are aggregated from the read-only chernivtsi-finance-v2 database. Components never talk
-		to D1 directly — load data on the server (or as a fixture) and pass arrays as props.
-	</footer>
+		<footer class="gallery-foot mt-10">
+			Sample values are aggregated from the read-only chernivtsi-finance-v2 database. Components
+			never talk to D1 directly — load data on the server (or as a fixture) and pass arrays as
+			props.
+		</footer>
+	</div>
 </main>
+
+<style>
+	.gallery-page {
+		background: var(--page-bg);
+		color: var(--page-fg);
+	}
+
+	.masthead {
+		background: var(--template-black);
+		border-bottom: 4px solid var(--template-red);
+	}
+
+	.masthead img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	.masthead-bar {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 0.5rem 1.5rem;
+		padding: 0.7rem clamp(1.25rem, 4vw, 2.5rem);
+		color: #b8b8b8;
+		font-size: 0.64rem;
+		font-weight: 500;
+		letter-spacing: 0.14em;
+		line-height: 1.3;
+		text-transform: uppercase;
+	}
+
+	.masthead-bar span:last-child {
+		color: var(--template-coral);
+	}
+
+	.gallery-shell {
+		width: min(100%, 76rem);
+		margin: 0 auto;
+		padding: clamp(2rem, 4vw, 3.5rem) clamp(1.25rem, 4vw, 2.5rem);
+	}
+
+	.gallery-head {
+		max-width: 52rem;
+	}
+
+	.gallery-eyebrow {
+		display: flex;
+		align-items: center;
+		gap: 0.55rem;
+		color: var(--template-blue);
+		font-size: 0.68rem;
+		font-weight: 700;
+		letter-spacing: 0.18em;
+		line-height: 1.3;
+		text-transform: uppercase;
+	}
+
+	.gallery-eyebrow span {
+		width: 0.55rem;
+		height: 0.55rem;
+		background: var(--template-red);
+	}
+
+	.gallery-head h1 {
+		margin-top: 0.7rem;
+		font-size: clamp(2.2rem, 5vw, 3.5rem);
+		font-weight: 700;
+		letter-spacing: -0.035em;
+		line-height: 0.98;
+		text-transform: uppercase;
+	}
+
+	.gallery-lede {
+		max-width: 62ch;
+		margin-top: 0.9rem;
+		color: var(--page-muted);
+		font-size: 0.95rem;
+		line-height: 1.55;
+	}
+
+	.swatches {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.45rem;
+		margin-top: 1.2rem;
+	}
+
+	.swatches span {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		padding: 0.35rem 0.55rem 0.35rem 0.35rem;
+		border: 1px solid var(--page-line);
+		color: var(--page-muted);
+		font-size: 0.62rem;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		line-height: 1;
+		text-transform: uppercase;
+	}
+
+	.swatches span::before {
+		width: 0.8rem;
+		height: 0.8rem;
+		border: 1px solid var(--page-line);
+		background: var(--swatch);
+		content: '';
+	}
+
+	.gallery-foot {
+		padding-top: 1rem;
+		border-top: 1px solid var(--page-line);
+		color: var(--page-muted);
+		font-size: 0.72rem;
+		line-height: 1.55;
+	}
+</style>

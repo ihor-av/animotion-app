@@ -13,7 +13,7 @@
 <div class="legend {className}" data-align={align}>
 	{#each items as item}
 		<span class="item">
-			<span class="dot" style:background={item.color ?? 'var(--chart-1, #2563eb)'}></span>
+			<span class="dot" style:background={item.color ?? 'var(--chart-1, #0033a1)'}></span>
 			<span class="label">{item.label}</span>
 			{#if item.value}
 				<span class="value">{item.value}</span>
@@ -51,7 +51,7 @@
 		flex: none;
 		width: 0.65rem;
 		height: 0.65rem;
-		border-radius: 999px;
+		border-radius: 0;
 	}
 
 	.label {

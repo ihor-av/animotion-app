@@ -70,10 +70,13 @@ handoff.
 src/routes/+page.svelte          the deck (Animotion Presentation/Slide)
 src/routes/gallery/+page.svelte  working examples of every chart
 docs/judging-criteria.md         the 8-criterion rubric, deck order, evidence rules
+docs/design-system.md            template tokens, fonts, slide components, licensing
 src/lib/charts/                  chart components, types, scales, formatters
 src/lib/charts/index.ts          public chart-kit imports
+src/lib/slides/                  title, section, content, metric and frame components
 src/lib/server/d1.ts             server/build-only D1 REST helper
-src/styles/app.css               chart CSS variables
+src/styles/app.css               template and chart CSS variables
+static/template/                 official Hackathon 2026 banner and content band
 static/                          static files
 wrangler.jsonc                   Worker name and ./build assets
 .github/workflows/               CI, deploy, builder loop, review loop
@@ -98,12 +101,30 @@ scripts/                         deterministic loop helpers
 
 ## Design contract
 
-- Compose from `$lib/charts` components. Do not build a parallel chart system.
-- Use `ChartCard` and `KpiCard` for framing, and the existing formatters and
-  palette.
-- Slides are 16:9. Check at 1280x720 and 1920x1080; text must not overflow.
+The visual source of truth is the official Hackathon 2026 PowerPoint template,
+extracted in [`docs/design-system.md`](./docs/design-system.md). Read it before
+changing slide or chart styling.
+
+- Use the template tokens in `src/styles/app.css`: black, white, red
+  `#EE252F`, blue `#0033A1`, coral `#D66B47`, gray and line neutrals.
+- Use `TitleSlide`, `SectionSlide`, `ContentSlide`, `MetricSlide`,
+  `SlideFrame`, and `RubricRail` from `$lib/slides`. Do not hand-build a new
+  frame for a slide.
+- Keep the eight scored sections in `rubricSections` order. `SectionSlide`
+  numbers 1–8 map to that list.
+- Compose charts from `$lib/charts` components. Do not build a parallel chart
+  system. Use `ChartCard` and `KpiCard` for framing, and the existing
+  formatters and `--chart-*` palette.
+- Slides are 16:9 at 1280 × 720. Check at 1280x720 and 1920x1080; text must not
+  overflow.
+- Content slides are white; the title slide is black. Keep square corners and
+  the banner header treatment. Do not add rounded generic cards or drop
+  shadows.
 - Text must stay legible when projected. Prefer one takeaway per slide.
+- Slide copy is Ukrainian; code, docs, commits and agent output stay English.
 - No decorative charts. If a chart does not support the takeaway, remove it.
+- Every number needs a source, units, and an as-of date where the data has one.
+  Never invent, impute, or extrapolate a number.
 - Keep Tailwind classes consistent with the existing gallery.
 
 ## Agent workflow

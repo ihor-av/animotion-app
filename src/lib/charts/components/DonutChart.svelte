@@ -130,7 +130,7 @@
 				text-anchor="middle"
 				font-size={size * 0.11}
 				font-weight="600"
-				fill="var(--chart-text, #111111)">{displayValue}</text
+				fill="var(--chart-text, #000000)">{displayValue}</text
 			>
 			{#if centerLabel}
 				<text
@@ -138,7 +138,7 @@
 					y={size / 2 + size * 0.09}
 					text-anchor="middle"
 					font-size={size * 0.08}
-					fill="var(--chart-muted, #6b7280)">{centerLabel}</text
+					fill="var(--chart-muted, #4a4a4a)">{centerLabel}</text
 				>
 			{/if}
 		{/if}

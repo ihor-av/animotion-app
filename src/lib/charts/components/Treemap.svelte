@@ -46,7 +46,7 @@
 				y={rect.y + 1}
 				width={Math.max(0, rect.width - 2)}
 				height={Math.max(0, rect.height - 2)}
-				rx="4"
+				rx="0"
 				fill={rect.color}
 			>
 				<title>{rect.label}: {valueFormatter(rect.value)}</title>
