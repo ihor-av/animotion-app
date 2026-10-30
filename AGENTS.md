@@ -5,9 +5,39 @@ Read this before changing anything. It is the contract for humans and agents.
 ## Mission
 
 Build the team's hackathon presentation: a finance data-visualization deck
-using Chernivtsi open data served from Cloudflare D1. The exact assignment is
-announced on-site, so the deck will change. Optimize for small, reviewable
-changes, not for a fixed story.
+using Chernivtsi open data served from Cloudflare D1. The final deliverable is
+a live demo plus a Ukrainian presentation that follows the eight judging
+criteria in [`docs/judging-criteria.md`](./docs/judging-criteria.md), in order.
+The exact assignment is announced on-site, so the deck will change. Optimize
+for small, reviewable changes, not for a fixed story.
+
+## Hackathon rubric
+
+The final deliverable is judged on eight criteria, 10 points each. The deck
+must present them in this order:
+
+1. Problem relevance
+2. Open data use and integration
+3. Creativity and innovation
+4. Market potential and scaling
+5. Social impact in Chernivtsi
+6. Technical viability and live prototype
+7. Cost to build and maintain
+8. Business model and financial viability
+
+The full rubric, the required slide order, and the evidence rules live in
+[`docs/judging-criteria.md`](./docs/judging-criteria.md). That file is the
+source of truth; read it before any deck or narrative change.
+
+Rules:
+
+- Every issue names the criterion it serves and the evidence it adds.
+- Keep the eight scored sections in order. The title and closing slides are not
+  scored.
+- Every problem, market, social-impact, cost, and business-model claim needs a
+  source or an explicit assumption. Never invent a number.
+- Slide copy is Ukrainian. Code, docs, commits, and agent output are English.
+- The live URL is the technical-viability evidence. A broken demo is not done.
 
 ## Stack
 
@@ -39,6 +69,7 @@ handoff.
 ```text
 src/routes/+page.svelte          the deck (Animotion Presentation/Slide)
 src/routes/gallery/+page.svelte  working examples of every chart
+docs/judging-criteria.md         the 8-criterion rubric, deck order, evidence rules
 src/lib/charts/                  chart components, types, scales, formatters
 src/lib/charts/index.ts          public chart-kit imports
 src/lib/server/d1.ts             server/build-only D1 REST helper
@@ -77,8 +108,9 @@ scripts/                         deterministic loop helpers
 
 ## Agent workflow
 
-- A task is a GitHub issue with acceptance criteria. The chatbot sends the
-  issue number to the Cloudflare `app-builder` Worker.
+- A task is a GitHub issue with acceptance criteria and a named rubric
+  criterion. The chatbot sends the issue number to the Cloudflare `app-builder`
+  Worker.
 - The builder creates `agent/issue-<n>`, opens a PR, and never touches `main`.
 - Every PR gets two independent adversarial reviews from the Cloudflare
   reviewer. A PASS with green CI is squash-merged automatically. A FAIL starts
@@ -90,11 +122,16 @@ scripts/                         deterministic loop helpers
   lockfile.
 - No TODO stubs, skipped tests, commented-out code, or "temporary" workarounds.
 - If you need a paragraph-long comment to justify a workaround, fix the code.
-- English only in code, comments, commits, docs, and agent output.
+- English in code, comments, commits, docs, and agent output. Slide copy is
+  Ukrainian.
 
 ## Definition of done
 
 - Acceptance criteria in the issue are met.
+- The change names the rubric criterion it serves and adds evidence for it.
+- The eight scored sections remain in the required order.
+- Every problem, market, social-impact, cost, or business-model claim has a
+  source or an explicit assumption.
 - `npm run check`, `npm run build`, and `npm run check:meta` pass.
 - No secrets, tokens, personal data, or generated directories in the diff.
 - The deck still works at `/` and the chart gallery at `/gallery`.
@@ -106,7 +143,12 @@ scripts/                         deterministic loop helpers
 - Each review runs two independent reviewer processes; both must say `PASS`.
 - A re-review of the same FAILed commit is refused. Push a fix commit first.
 - A finding needs a severity, `file:line`, evidence, and a suggested fix.
-- Reviewers judge against this file and the issue's acceptance criteria, not
-  personal style preferences.
+- Reviewers judge against this file, `docs/judging-criteria.md`, and the issue's
+  acceptance criteria, not personal style preferences.
+- For deck/content changes, the named criterion must be served, the eight
+  sections must stay in order, and every claim must be sourced or labeled as an
+  assumption. Missing evidence or an out-of-order section is `MAJOR`.
+- For code-only changes, do not demand new rubric slides; judge only the issue's
+  scope.
 - A reviewer must end with exactly `VERDICT: PASS` or `VERDICT: FAIL`.
 - `BLOCKER` or `MAJOR` findings mean `FAIL`. `MINOR` findings do not block.

@@ -8,7 +8,35 @@ body:
       value: |
         Keep this scoped and give it testable acceptance criteria. The chatbot
         can start the Cloudflare coder on this issue. The agent opens a PR;
-        passing CI and review auto-merges it.
+        passing CI and review auto-merges it. The deck must follow the
+        eight-criterion order in `docs/judging-criteria.md`.
+  - type: dropdown
+    id: rubric
+    attributes:
+      label: Rubric criterion
+      description: Which judging criterion does this task serve? The deck order is mandatory.
+      options:
+        - "1. Problem relevance (Актуальність проблеми)"
+        - "2. Open data use (Якість використання відкритих даних)"
+        - "3. Creativity and innovation (Креативність та інноваційність)"
+        - "4. Market potential (Потенціал на ринку)"
+        - "5. Social impact (Суспільний потенціал)"
+        - "6. Technical viability (Технічна життєздатність)"
+        - "7. Cost (Затратність на створення/підтримку)"
+        - "8. Business model (Бізнес-модель та фінансова життєздатність)"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Sources, D1 views/queries, calculations, or demo links that support this task. No invented numbers.
+      placeholder: |
+        - D1 view: v_assets_summary
+        - Source: https://... (accessed 2026-10-30)
+        - Estimate: Cloudflare Workers Paid $5/mo (assumption)
+    validations:
+      required: true
   - type: textarea
     id: goal
     attributes:
@@ -22,9 +50,10 @@ body:
       label: Acceptance criteria
       description: Checkable statements. The reviewers will judge against these.
       placeholder: |
+        - [ ] The slide serves rubric criterion 5
         - [ ] `/gallery` still builds
         - [ ] The chart shows units, source, and as-of date
-        - [ ] No new dependencies
+        - [ ] No unsupported claims
     validations:
       required: true
   - type: textarea
